@@ -4,6 +4,7 @@
 
 <head>
     <link href="/dist/output.css" rel="stylesheet">
+    <script src="./SpeechRec/index.js"></script>
 </head>
 
 <body class="bg-background">
@@ -18,7 +19,7 @@
     <div class="flex h-14">
         <div class="mx-auto text-center">
             <img src="Logo.svg" style="margin-top: 25%;"/>
-            <button onclick="location.href='active.html'" type="button" class="bg-UIGreen hover:bg-UIGreenHover text-white font-bold text-4xl py-2 px-4 rounded w-96 h-28 mt-28">
+            <button onclick="startButton()" type="button" class="bg-UIGreen hover:bg-UIGreenHover text-white font-bold text-4xl py-2 px-4 rounded w-96 h-28 my-28">
                 START SESSION</button>
         </div>
     </div>
@@ -29,4 +30,8 @@
     currentTime.getHours();
     currentTime.getMinutes();
     currentTime.getSeconds();
+
+    function startButton() {
+        location.href='active.html'
+    }
 </script>

@@ -7,7 +7,7 @@
     <script src="./SpeechRec/index.js"></script>
 </head>
 
-<body class="bg-background">
+<body onload="run()" class="bg-background">
     <!-- titlebar -->
     <div class="bg-titleBar h-[50px] flex">
         <div class="flex flex-row mx-auto my-3 font-bold text-lg">
@@ -70,7 +70,7 @@
             <!-- fifth row -->
             <div>
                 <h1>Transcript</h1>
-                <div>
+                <div id="transcriptBox">
                     <textarea id="transcript" style="background: #FBFBFB; width: 100%; text-align: left; height: 200px; resize: none;" disabled></textarea>
                 </div>
 
@@ -95,7 +95,7 @@
                 <a href="./idle.html" class="bg-UIRed hover:bg-UIRedHover text-white text-lg py-2 px-4 rounded" onclick="stop()">End Session</a>
             </div>
             <script
-                src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
+                src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places&v=weekly"
                 defer></script>
         </div>
     </div>

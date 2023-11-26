@@ -1,6 +1,6 @@
 // required dom elements
 const buttonEl = document.getElementById("button");
-const messageEl = document.getElementById("transcription");
+const messageEl = document.getElementById("transcript");
 const titleEl = document.getElementById("real-time-title");
 
 // set initial state of application variables
@@ -28,7 +28,7 @@ const stop = async () => {
 const run = async () => {
   const response = await fetch("http://localhost:8000"); // get temp session token from server.js (backend)
   const data = await response.json();
-
+  console.log("hello");
   if (data.error) {
     alert(data.error);
     return;
@@ -40,8 +40,6 @@ const run = async () => {
   socket = await new WebSocket(
     `wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${token}`,
   );
-
-  const transcriptBox = document.getElementById("");
 
   // handle incoming messages to display transcription to the DOM
   const texts = {};
@@ -71,7 +69,7 @@ const run = async () => {
 
   socket.onopen = () => {
     // once socket is open, begin recording
-    messageEl.style.display = "";
+    // messageEl.style.display = "";
     navigator.mediaDevices
       .getUserMedia({ audio: true })
       .then((stream) => {
