@@ -22,7 +22,7 @@ OpenAI Fine Tuning 🧠: Harnessing the prowess of OpenAI, our project stands ou
 
 Assembly AI, Voice to Text 🗣️📝: Alistar introduces the magic of voice with Assembly AI, transforming spoken words into digital text seamlessly. Communicate effortlessly with our innovative voice-to-text feature! 🎙️✨
 
-Infobib-Two-Way SMS 📬: Sarim takes communication to the next level with Infobib, ensuring a smooth, two-way SMS exchange of information. Stay connected like never before! 🔄📤📥
+Infobib-Two-Way SMS 📬: Sarim takes communication to the next level with Infobip, ensuring a smooth, two-way SMS exchange of information. Stay connected like never before! 🔄📤📥
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
