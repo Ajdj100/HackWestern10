@@ -4,10 +4,10 @@
 
 <head>
     <link href="/dist/output.css" rel="stylesheet">
-    <script src="./SpeechRec/index.js"></script>
 </head>
+<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 
-<body onload="run()">
+<body>
     <!-- titlebar -->
     <div class="bg-titleBar h-[42px] flex">
         <!-- add title icon here -->
@@ -22,9 +22,9 @@
                     <h1>Dispatch</h1>
                     <input id="police" type="checkbox" onclick="findNearbyService('police')">
                     <label for="police">Police</label>
-                    <input id="fire" type="checkbox">
+                    <input id="fire" type="checkbox" onclick="findNearbyService('fire department')">
                     <label for="fire">Fire</label>
-                    <input id="ambulance" type="checkbox">
+                    <input id="ambulance" type="checkbox" onclick="findNearbyService('paramedics')">
                     <label for="ambulance">Ambulance</label>
                 </div>
                 <!-- reccomendation location -->
@@ -65,9 +65,10 @@
             <!-- fifth row -->
             <div>
                 <h1>Transcript</h1>
-                <div id="transcriptBox" class="bg-red-600">
-                    <p id="transcript" class="w-full">AAAAAAA</p>
+                <div class="real-time-interface bg-background">
+                    <p id="message" class="real-time-interface__message"></p>
                 </div>
+
 
                 <!-- message send area -->
                 <div>
@@ -87,10 +88,11 @@
                 <div id="map"></div>
             </div>
             <div>
-                <a href="./idle.html" class="text-red-500" onclick="stop()">End Session</a>
+                <a id="button" href="./idle.html" class="text-red-500" onclick="stop()">End Session</a>
             </div>
+            <script src="./js/index.js"></script>
             <script
-                src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places&v=weekly"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm8tTTer_M0Jt6Dty_djd74IYSLfAx0go&callback=initMap&libraries=places&v=weekly"
                 defer></script>
         </div>
     </div>
