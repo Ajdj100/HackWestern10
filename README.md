@@ -10,9 +10,9 @@ Meet our fantastic team of tech wizards who've brewed up an exceptional project 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 🌐 Key Components:
-HTML, CSS, JS, Tailwind 🎨: Our web development superheroes, Hamza, Alistar, and Sarim, have crafted a stunning user interface with the perfect blend of aesthetics and functionality.
+HTML, CSS, JS, Tailwind 🎨: Our web development superheroes, Hamza, Alistair, and Sarim, and Lisa have crafted a stunning user interface with the perfect blend of aesthetics and functionality.
 
-Google Map API 🗺️: Alistar takes us on a journey with seamless integration of Google Map API, unlocking the power of geolocation for an unparalleled user experience. Being able to find closet first-responders in seconds 📍🌍
+Google Map API 🗺️: Alistair takes us on a journey with seamless integration of Google Map API, unlocking the power of geolocation for an unparalleled user experience. Being able to find closet first-responders in seconds 📍🌍
 
 Python, Rust 🐍⚙️: Under the hood, our engine is powered by the dynamic duo - Python and Rust, ensuring robust functionality and lightning-fast performance. ⚡💻
 
@@ -29,11 +29,11 @@ Infobib-Two-Way SMS 📬: Sarim takes communication to the next level with Infob
 🌟 Meet the Makers:
 Hamza 🚀: The maestro of Twilio API, OpenAI Fine Tuning, and SMS Texting, Hamza's coding prowess is the heartbeat of our project. Expect nothing less than excellence! 💻🌟
 
-Alistar 🎤: The voice maestro, Alistar, leads the charge with Voice-to-Text magic, and his expertise in Tailwind and Google Map API makes the project a masterpiece. Hear the future unfold! 🗣️🌐
+Alistar 🎤: The voice maestro, Alistair, leads the charge with Voice-to-Text magic, and his expertise in Tailwind and Google Map API makes the project a masterpiece. Hear the future unfold! 🗣️🌐
 
 Lisa 🎨: The artistic virtuoso, Lisa, is the mastermind behind our captivating UX/UI design. With HTML, CSS, JS, and Tailwind at her fingertips, she has turned our vision into a visual symphony. Witness design innovation! 🎨✨
 
-Sarim 📱: The communication guru, Sarim, spearheads Twilio API, Infobib-Two-Way SMS, and nails the presentation. His HTML, CSS, JS skills are the glue that binds our project together. Get ready for seamless connections! 📲🔗
+Sarim 📱: The communication guru, Sarim, spearheads Twilio API, Infobip-Two-Way SMS, and nails the presentation. His HTML, CSS, JS skills are the glue that binds our project together. Get ready for seamless connections! 📲🔗
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 🚀 Conclusion:
