@@ -77,21 +77,7 @@
         <div class="bg-blue-500 w-1/2">
             <div id="container">
                 <div id="map"></div>
-                <div style="display:flex; flex-direction: column;">
-                    <button style="width:200px; height:60px" onclick="findNearbyService('police')">police</button>
-                    <button style="width:200px; height:60px" onclick="findNearbyService('fire')">fire</button>
-                    <button style="width:200px; height:60px" onclick="findNearbyService('ambulance')">ambulance</button>
-                </div>
-
             </div>
-
-            <!-- 
-              The `defer` attribute causes the callback to execute after the full HTML
-              document has been parsed. For non-blocking uses, avoiding race conditions,
-              and consistent behavior across browsers, consider loading using Promises.
-              See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-              for more information.
-              -->
             <script
                 src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
                 defer></script>
@@ -113,4 +99,150 @@
         background: #E9E9E9;
         box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.19);
     }
+
+    #map {
+        max-width: 100%;
+    }
+
+    #container {
+        height: 100%;
+        display: flex;
+    }
+
+    #sidebar {
+        flex-basis: 5rem;
+        flex-grow: 1;
+        padding: 1rem;
+        max-width: 30rem;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+
+    #map {
+        flex-basis: 0;
+        flex-grow: 4;
+        height: 100%;
+    }
+
+    #sidebar {
+        display: flex;
+        flex-direction: column;
+    }
 </style>
+
+<!-- oh boy here we go -->
+<script>
+    var map;
+    var service;
+    var infowindow;
+    var center;
+    var callerLoc;
+    var markers = [];
+
+    async function initMap() {
+        center = new google.maps.LatLng(42.98725202578776, -81.2485858475793);
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 15,
+            styles: [
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                }
+            ]
+        });
+
+        await findLocation("the library in ivey")
+    }
+
+    //Searches for an address and tries to find and focus on it
+    function findLocation(search) {
+        var request = {
+            location: center,
+            radius: '500',
+            query: search
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, callback);
+    }
+
+
+
+
+    //mark emergency service station near place
+
+    //TODO: change the mark type.... maybe add a param to chose the marker type based on the service type
+    function serviceCallback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map,
+                title: "Service Location",
+            });
+            markers.push(marker);
+            var bounds = new google.maps.LatLngBounds();
+            for (var i = 0; i < markers.length; i++) {
+                bounds.extend(markers[i].getPosition());
+            }
+            map.fitBounds(bounds);
+        }
+    }
+
+    function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            callerLoc = results[0].geometry.location
+            map.setCenter(results[0].geometry.location)
+            marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map,
+                title: "Caller Location",
+            });
+            markers.push(marker)
+        }
+    }
+
+    function findNearbyService(serviceType) {
+        var request = {
+            location: callerLoc, //google.maps.LatLng(43.47818732371278, -80.5195043579449)
+            radius: '500',
+            query: serviceType
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, serviceCallback);
+    }
+
+    window.initMap = initMap;
+</script>
