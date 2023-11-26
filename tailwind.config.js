@@ -11,6 +11,7 @@ module.exports = {
         UIGreen: "#18B758",
         UIGreenHover: "#169B4B",
         UIRed: "#BF0B0B",
+        UIRedHover: "#A20909",
       }
     },
   },
