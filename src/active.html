@@ -8,21 +8,109 @@
 
 <body>
     <!-- titlebar -->
-    <div class="bg-titleBar h-8 flex">
+    <div class="bg-titleBar h-[42px] flex">
         <!-- add title icon here -->
     </div>
     <!-- body -->
-    <div class="flex flex-row w-screen justify-around px-[110px] py-[40px]">
-        <div id="leftBox" class="bg-darkBackground w-1/2">
+    <div class="flex flex-row w-screen justify-around px-[110px] py-[40px] h-full">
+        <div id="leftBox" class="bg-darkBackground w-1/2 px-[30px] rounded-[7px]">
+            <!-- first row -->
+            <div class="flex flex-row justify-around">
+                <!-- dispach section -->
+                <div>
+                    <h1>Dispatch</h1>
+                    <input id="police" type="checkbox">
+                    <label for="police">Police</label>
+                    <input id="fire" type="checkbox">
+                    <label for="fire">Fire</label>
+                    <input id="ambulance" type="checkbox">
+                    <label for="ambulance">Ambulance</label>
+                </div>
+                <!-- distress -->
+                <div>
+                    <h1>Level of Distress</h1>
+                    <input type="text" id="distressLevel">
+                </div>
+            </div>
+            <!-- second row -->
+            <div class="flex flex-row">
+                <div>
+                    <h1>First Name</h1>
+                    <input type="text" id="firstName">
+                </div>
+                <div>
+                    <h1>Last Name</h1>
+                    <input type="text" id="lastName">
+                </div>
+            </div>
+            <!-- third row -->
+            <div class="flex flex-row">
+                <div>
+                    <h1>Phone Number</h1>
+                    <input type="text" id="phoneNumber">
+                </div>
+                <div>
+                    <h1>Date</h1>
+                    <input type="text" id="date">
+                </div>
+                <div>
+                    <h1>Time Of Incident</h1>
+                    <input type="text" id="incidentTime">
+                </div>
+            </div>
+            <!-- fourth row -->
             <div>
-                <h1>Dispatch</h1>
+                <h1>Details</h1>
+                <input type="text" id="details">
+            </div>
+            <!-- fifth row -->
+            <div>
+                <h1>Transcript</h1>
+                how the hell
+                <!-- message send area -->
+                <div>
+
+                </div>
             </div>
         </div>
         <div class="w-[59px]"></div>
         <div class="bg-blue-500 w-1/2">
-            <h1>right box</h1>
+            <div id="container">
+                <div id="map"></div>
+                <div style="display:flex; flex-direction: column;">
+                    <button style="width:200px; height:60px" onclick="findNearbyService('police')">police</button>
+                    <button style="width:200px; height:60px" onclick="findNearbyService('fire')">fire</button>
+                    <button style="width:200px; height:60px" onclick="findNearbyService('ambulance')">ambulance</button>
+                </div>
+
+            </div>
+
+            <!-- 
+              The `defer` attribute causes the callback to execute after the full HTML
+              document has been parsed. For non-blocking uses, avoiding race conditions,
+              and consistent behavior across browsers, consider loading using Promises.
+              See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+              for more information.
+              -->
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
+                defer></script>
         </div>
     </div>
 </body>
 
 </html>
+
+<style>
+    input[type="text"] {
+        border-radius: 5px;
+        background: #FBFBFB;
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.22);
+    }
+
+    #leftBox {
+        border-radius: 7px;
+        background: #E9E9E9;
+        box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.19);
+    }
+</style>
