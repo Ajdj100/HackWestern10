@@ -7,7 +7,7 @@
     <script src="./SpeechRec/index.js"></script>
 </head>
 
-<body>
+<body onload="run()">
     <!-- titlebar -->
     <div class="bg-titleBar h-[42px] flex">
         <!-- add title icon here -->
@@ -65,8 +65,8 @@
             <!-- fifth row -->
             <div>
                 <h1>Transcript</h1>
-                <div>
-
+                <div id="transcriptBox" class="bg-red-600">
+                    <p id="transcript" class="w-full">AAAAAAA</p>
                 </div>
 
                 <!-- message send area -->
@@ -90,7 +90,7 @@
                 <a href="./idle.html" class="text-red-500" onclick="stop()">End Session</a>
             </div>
             <script
-                src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
+                src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places&v=weekly"
                 defer></script>
         </div>
     </div>
