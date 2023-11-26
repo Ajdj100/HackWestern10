@@ -13,9 +13,9 @@
     </div>
     <!-- body -->
     <div class="flex flex-row w-screen justify-around px-[110px] py-[40px] h-full">
-        <div id="leftBox" class="bg-darkBackground w-1/2 px-[30px] rounded-[7px]">
+        <div id="leftBox" class="bg-darkBackground w-[791px] px-[30px] py-[16px] rounded-[7px]">
             <!-- first row -->
-            <div class="flex flex-row justify-around">
+            <div class="flex flex-row justify-around mb-[25px]">
                 <!-- dispach section -->
                 <div>
                     <h1>Dispatch</h1>
@@ -26,25 +26,23 @@
                     <input id="ambulance" type="checkbox">
                     <label for="ambulance">Ambulance</label>
                 </div>
-                <!-- distress -->
+                <!-- reccomendation location -->
                 <div>
-                    <h1>Level of Distress</h1>
-                    <input type="text" id="distressLevel">
                 </div>
             </div>
             <!-- second row -->
-            <div class="flex flex-row">
+            <div class="flex flex-row justify-between mb-[25px]">
                 <div>
                     <h1>First Name</h1>
-                    <input type="text" id="firstName">
+                    <input type="text" id="firstName" class="w-[321px]">
                 </div>
                 <div>
                     <h1>Last Name</h1>
-                    <input type="text" id="lastName">
+                    <input type="text" id="lastName" class="w-[321px]">
                 </div>
             </div>
             <!-- third row -->
-            <div class="flex flex-row">
+            <div class="flex flex-row mb-[25px]">
                 <div>
                     <h1>Phone Number</h1>
                     <input type="text" id="phoneNumber">
@@ -59,9 +57,9 @@
                 </div>
             </div>
             <!-- fourth row -->
-            <div>
+            <div class="mb-[25px]">
                 <h1>Details</h1>
-                <input type="text" id="details">
+                <input type="text" id="details" class="">
             </div>
             <!-- fifth row -->
             <div>
@@ -74,7 +72,11 @@
             </div>
         </div>
         <div class="w-[59px]"></div>
-        <div class="bg-blue-500 w-1/2">
+        <div class=" w-1/2">
+            <div>
+                <h1>Location</h1>
+                <input type="text" id="location">
+            </div>
             <div id="container">
                 <div id="map"></div>
             </div>
@@ -92,6 +94,9 @@
         border-radius: 5px;
         background: #FBFBFB;
         box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.22);
+        height: 38px;
+        padding-left: 5px;
+        
     }
 
     #leftBox {
