@@ -7,18 +7,21 @@
     <script src="./SpeechRec/index.js"></script>
 </head>
 
-<body>
+<body class="bg-background">
     <!-- titlebar -->
-    <div class="bg-titleBar h-[42px] flex">
-        <!-- add title icon here -->
+    <div class="bg-titleBar h-[50px] flex">
+        <div class="flex flex-row mx-auto my-3 font-bold text-lg">
+            <div class="text-brandColor">Rescue</div>
+            <div class="text-white">Link</div>
+        </div>
     </div>
     <!-- body -->
     <div class="flex flex-row w-screen justify-around px-[110px] py-[40px] h-full">
-        <div id="leftBox" class="bg-darkBackground w-[700px] px-[30px] py-[16px] rounded-[7px]">
+        <div id="leftBox" class="bg-darkBackground w-[700px] px-[30px] py-[20px] rounded-[7px]">
             <!-- first row -->
-            <div class="flex flex-row justify-around mb-[25px]">
-                <!-- dispach section -->
-                <div>
+            <div class="flex flex-row mb-[25px]">
+                <!-- dispatch section -->
+                <div class="mx-auto">
                     <h1>Dispatch</h1>
                     <input id="police" type="checkbox" onclick="findNearbyService('police')">
                     <label for="police">Police</label>
@@ -28,7 +31,9 @@
                     <label for="ambulance">Ambulance</label>
                 </div>
                 <!-- reccomendation location -->
-                <div>
+                <div class="bg-[#D9D9D9] p-1 px-14 mx-auto rounded text-center">
+                    <h1>Recommendation</h1>
+                    <p id="recommendation">------</p>
                 </div>
             </div>
             <!-- second row -->
@@ -43,7 +48,7 @@
                 </div>
             </div>
             <!-- third row -->
-            <div class="flex flex-row mb-[25px] justify-around">
+            <div class="flex flex-row mb-[25px] justify-between">
                 <div>
                     <h1>Phone Number</h1>
                     <input type="text" id="phoneNumber">
@@ -53,20 +58,20 @@
                     <input type="text" id="date">
                 </div>
                 <div>
-                    <h1>Time Of Incident</h1>
+                    <h1>Time of Incident</h1>
                     <input type="text" id="incidentTime">
                 </div>
             </div>
             <!-- fourth row -->
             <div class="mb-[25px]">
                 <h1>Details</h1>
-                <input type="text" id="details" class="w-[728px] h-[185px]">
+                <textarea id="details" style="width: 100%; text-align: left; height: 150px; resize: none;"></textarea>
             </div>
             <!-- fifth row -->
             <div>
                 <h1>Transcript</h1>
                 <div>
-
+                    <textarea id="transcript" style="background: #FBFBFB; width: 100%; text-align: left; height: 200px; resize: none;" disabled></textarea>
                 </div>
 
                 <!-- message send area -->
@@ -78,16 +83,16 @@
         <!-- divider -->
         <div class="w-[59px]"></div>
         <!-- map side -->
-        <div class=" w-1/2">
+        <div class="w-1/2">
             <div>
                 <h1>Location</h1>
-                <input type="text" id="location">
+                <input style="width: 100%; background: #F1F1F1; text-align: left;" type="text" id="location">
             </div>
             <div id="container" class="pt-6">
                 <div id="map"></div>
             </div>
-            <div>
-                <a href="./idle.html" class="text-red-500" onclick="stop()">End Session</a>
+            <div class="float-right mt-8">
+                <a href="./idle.html" class="bg-UIRed hover:bg-UIRedHover text-white text-lg py-2 px-4 rounded" onclick="stop()">End Session</a>
             </div>
             <script
                 src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
@@ -105,7 +110,15 @@
         box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.22);
         height: 38px;
         padding-left: 5px;
+        text-align: center;
+    }
 
+    textarea {
+        border-radius: 5px;
+        background: #FBFBFB;
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.22);
+        height: 38px;
+        padding-left: 5px;
     }
 
     #leftBox {
@@ -119,7 +132,7 @@
     }
 
     #container {
-        height: 100%;
+        height: 92%;
         display: flex;
     }
 
