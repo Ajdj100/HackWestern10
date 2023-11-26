@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         titleBar: '#0A191F',
         background: '#FBFBFB',
-        
+        darkBackground: '#E9E9E9',
       }
     },
   },
