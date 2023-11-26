@@ -21,17 +21,19 @@
             <!-- first row -->
             <div class="flex flex-row mb-[25px]">
                 <!-- dispatch section -->
-                <div class="mx-auto">
+                <div class="mx-auto" style="margin-left: -1px;">
                     <h1>Dispatch</h1>
-                    <input id="police" type="checkbox" onclick="findNearbyService('police')">
-                    <label for="police">Police</label>
-                    <input id="fire" type="checkbox" onclick="findNearbyService('fire department')">
-                    <label for="fire">Fire</label>
-                    <input id="ambulance" type="checkbox" onclick="findNearbyService('paramedics')">
-                    <label for="ambulance">Ambulance</label>
+                    <div style="font-size: 18px;">
+                        <input id="police" type="checkbox" onclick="findNearbyService('police')">
+                        <label for="police">Police</label>
+                        <input id="fire" type="checkbox" onclick="findNearbyService('fire department')">
+                        <label for="fire">Fire</label>
+                        <input id="ambulance" type="checkbox" onclick="findNearbyService('paramedics')">
+                        <label for="ambulance">Ambulance</label>
+                    </div>
                 </div>
                 <!-- reccomendation location -->
-                <div class="bg-[#D9D9D9] p-1 px-14 mx-auto rounded text-center">
+                <div class="bg-[#D9D9D9] py-1 px-14 rounded text-center">
                     <h1>Recommendation</h1>
                     <p id="recommendation">------</p>
                 </div>
@@ -122,6 +124,8 @@
         height: 38px;
         padding-left: 5px;
     }
+
+    input[type="check"]
 
     #leftBox {
         border-radius: 7px;
