@@ -4,6 +4,7 @@
 
 <head>
     <link href="/dist/output.css" rel="stylesheet">
+    <script src="./SpeechRec/index.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
                 <!-- dispach section -->
                 <div>
                     <h1>Dispatch</h1>
-                    <input id="police" type="checkbox">
+                    <input id="police" type="checkbox" onclick="findNearbyService('police')">
                     <label for="police">Police</label>
                     <input id="fire" type="checkbox">
                     <label for="fire">Fire</label>
@@ -34,15 +35,15 @@
             <div class="flex flex-row justify-between mb-[25px]">
                 <div>
                     <h1>First Name</h1>
-                    <input type="text" id="firstName" class="w-[321px]">
+                    <input type="text" id="firstName" class="w-[300px]">
                 </div>
                 <div>
                     <h1>Last Name</h1>
-                    <input type="text" id="lastName" class="w-[321px]">
+                    <input type="text" id="lastName" class="w-[300px]">
                 </div>
             </div>
             <!-- third row -->
-            <div class="flex flex-row mb-[25px]">
+            <div class="flex flex-row mb-[25px] justify-around">
                 <div>
                     <h1>Phone Number</h1>
                     <input type="text" id="phoneNumber">
@@ -59,26 +60,34 @@
             <!-- fourth row -->
             <div class="mb-[25px]">
                 <h1>Details</h1>
-                <input type="text" id="details" class="">
+                <input type="text" id="details" class="w-[728px] h-[185px]">
             </div>
             <!-- fifth row -->
             <div>
                 <h1>Transcript</h1>
-                how the hell
+                <div>
+
+                </div>
+
                 <!-- message send area -->
                 <div>
 
                 </div>
             </div>
         </div>
+        <!-- divider -->
         <div class="w-[59px]"></div>
+        <!-- map side -->
         <div class=" w-1/2">
             <div>
                 <h1>Location</h1>
                 <input type="text" id="location">
             </div>
-            <div id="container">
+            <div id="container" class="pt-14">
                 <div id="map"></div>
+            </div>
+            <div>
+                <a href="./idle.html" class="text-red-500" onclick="stop()">End Session</a>
             </div>
             <script
                 src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
@@ -96,7 +105,7 @@
         box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.22);
         height: 38px;
         padding-left: 5px;
-        
+
     }
 
     #leftBox {
