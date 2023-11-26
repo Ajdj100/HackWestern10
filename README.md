@@ -29,7 +29,7 @@ Infobib-Two-Way SMS 📬: Sarim takes communication to the next level with Infob
 🌟 Meet the Makers:
 Hamza 🚀: The maestro of Twilio API, OpenAI Fine Tuning, and SMS Texting, Hamza's coding prowess is the heartbeat of our project. Expect nothing less than excellence! 💻🌟
 
-Alistar 🎤: The voice maestro, Alistair, leads the charge with Voice-to-Text magic, and his expertise in Tailwind and Google Map API makes the project a masterpiece. Hear the future unfold! 🗣️🌐
+Alistair 🎤: The voice maestro, Alistair, leads the charge with Voice-to-Text magic, and his expertise in Tailwind and Google Map API makes the project a masterpiece. Hear the future unfold! 🗣️🌐
 
 Lisa 🎨: The artistic virtuoso, Lisa, is the mastermind behind our captivating UX/UI design. With HTML, CSS, JS, and Tailwind at her fingertips, she has turned our vision into a visual symphony. Witness design innovation! 🎨✨
 
